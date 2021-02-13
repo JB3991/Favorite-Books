@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kd1-dy-gPz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorite Books-->
+        <scene sceneID="1eY-Ra-dD4">
+            <objects>
+                <tableViewController id="1BT-ON-Zz7" customClass="BookTableViewController" customModule="FavoriteBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pgS-4r-3rd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" textLabel="gnU-zS-PSM" detailTextLabel="pwg-HY-oCY" style="IBUITableViewCellStyleSubtitle" id="Jsd-FK-PYE">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jsd-FK-PYE" id="Y7f-Ub-eZm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gnU-zS-PSM">
+                                            <rect key="frame" x="20" y="5" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pwg-HY-oCY">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="WpT-nW-RXW" kind="show" identifier="EditBook" id="m4F-LP-PCL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1BT-ON-Zz7" id="Dex-gk-ePq"/>
+                            <outlet property="delegate" destination="1BT-ON-Zz7" id="WhI-Db-dt4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorite Books" id="mqc-GE-WjS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u6a-lL-V6S">
+                            <connections>
+                                <segue destination="WpT-nW-RXW" kind="show" identifier="AddBook" id="VoH-ow-0YM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xT-yJ-En4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-69.715142428785612"/>
+        </scene>
+        <!--Book From View Controller-->
+        <scene sceneID="f87-m1-enr">
+            <objects>
+                <viewController id="WpT-nW-RXW" customClass="BookFromViewController" customModule="FavoriteBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gmR-7K-M1p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favorite book?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtt-XS-hSG">
+                                <rect key="frame" x="103.5" y="157" width="207" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mb5-dC-7l9">
+                                <rect key="frame" x="50" y="231" width="314" height="166"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z7G-Mh-KAL">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpg-kz-7cN">
+                                        <rect key="frame" x="0.0" y="44" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Genre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMG-XT-vwm">
+                                        <rect key="frame" x="0.0" y="88" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDO-Yf-DPr">
+                                        <rect key="frame" x="0.0" y="132" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5p-4h-El0">
+                                <rect key="frame" x="190" y="429" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="WpT-nW-RXW" eventType="touchUpInside" id="B3e-6z-Okw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WDO-He-9WZ"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qtt-XS-hSG" firstAttribute="centerX" secondItem="WDO-He-9WZ" secondAttribute="centerX" id="AdC-og-utK"/>
+                            <constraint firstItem="Qtt-XS-hSG" firstAttribute="top" secondItem="WDO-He-9WZ" secondAttribute="top" constant="69" id="Gz3-xp-5Ez"/>
+                            <constraint firstItem="K5p-4h-El0" firstAttribute="centerX" secondItem="mb5-dC-7l9" secondAttribute="centerX" id="K22-O0-WxU"/>
+                            <constraint firstItem="K5p-4h-El0" firstAttribute="top" secondItem="mb5-dC-7l9" secondAttribute="bottom" constant="32" id="MSU-7y-F48"/>
+                            <constraint firstItem="mb5-dC-7l9" firstAttribute="top" secondItem="Qtt-XS-hSG" secondAttribute="bottom" constant="53.5" id="rKi-zr-Az2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mb5-dC-7l9" secondAttribute="trailing" constant="30" id="wMz-1g-1VC"/>
+                            <constraint firstItem="mb5-dC-7l9" firstAttribute="leading" secondItem="gmR-7K-M1p" secondAttribute="leadingMargin" constant="30" id="yCt-WF-jOR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="rIy-JD-dMi"/>
+                    <connections>
+                        <outlet property="authorTextField" destination="tpg-kz-7cN" id="YrG-Ja-HbN"/>
+                        <outlet property="genreTextField" destination="cMG-XT-vwm" id="eym-Z1-qbT"/>
+                        <outlet property="lengthTextField" destination="UDO-Yf-DPr" id="Fgj-Nr-GNd"/>
+                        <outlet property="titleTextField" destination="Z7G-Mh-KAL" id="P4P-qJ-rfL"/>
+                        <segue destination="cAR-PT-MGG" kind="unwind" identifier="UnwindToBookTable" unwindAction="prepareForUnwindWithSegue:" id="glx-qB-AsA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MA7-H6-wP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cAR-PT-MGG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="-70.614692653673174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l4j-US-qzA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kd1-dy-gPz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="6Uo-fx-bwc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1BT-ON-Zz7" kind="relationship" relationship="rootViewController" id="4Fh-49-tLd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTv-yQ-sye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="-69.715142428785612"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="m4F-LP-PCL"/>
+    </inferredMetricsTieBreakers>
+</document>
